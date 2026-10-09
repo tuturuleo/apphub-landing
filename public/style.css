@@ -1,4 +1,4 @@
-/* Фирменные цвета AppHub + пиксельный шрифт */
+/* Фирменные цвета AppHub: тёмный фон, оранжевый primary */
 
 html, body {
   height: 100%;
@@ -6,16 +6,20 @@ html, body {
   font-family: 'Press Start 2P', monospace;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
-  background: #ffffff; /* чистый белый фон */
-  color: #111;
+  /* Фон страницы — чёрно‑серый, чтобы CSS-переменные сохранились как актуальные */
+  background: #0a0a0a;
+  color: #e0e0e0;
 }
 
 a {text-decoration: none; color: inherit;}
 
 /* Основные цвета */
 :root {
-  --apphub-primary: #0066ff;   /* темно‑синий */
-  --apphub-accent:  #00b4ff;   /* светло‑голубой */
+  --apphub-primary: #ff6b00;   /* оранжевый */
+  --apphub-accent:  #ff9e40;   /* чуть светлее оранжевого */
+  --apphub-bg: #0a0a0a;        /* тёмный фон */
+  --apphub-card: #151515;      /* чуть светлее фона */
+  --apphub-border: #ff6b00;    /* оранжевая рамка */
 }
 
 .btn {
@@ -37,30 +41,70 @@ a {text-decoration: none; color: inherit;}
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background: var(--apphub-primary);
+  background: var(--apphub-bg); /* #0a0a0a */
   color: #fff;
   border-radius: 0.5rem;
   margin: 2rem auto;
   max-width: 90%;
 }
 
-.hero h1 {font-size: 2rem; margin-bottom: 0.5rem;}
-.hero p {font-size: 1rem; margin-bottom: 1rem;}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--apphub-primary);
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
 
 /* Card */
 .card {
-  background: #f5f7fa;
-  border: 2px solid var(--apphub-primary);
+  background: var(--apphub-card); /* #151515 */
+  border: 2px solid var(--apphub-border); /* #ff6b00 */
   border-radius: 0.5rem;
   padding: 1.5rem;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  color: #e0e0e0;
 }
 
-.card h2 {font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--apphub-primary);}
-.card p {margin-bottom: 0.8rem;}
-.card ul {list-style: none; margin-left: 0;}
-.card li::before {content: '►'; margin-right: 0.5rem; color: var(--apphub-accent);}
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--apphub-primary);
+}
 
-footer {text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.6;}
+.card p {
+  margin-bottom: 0.8rem;
+}
+
+.card ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.card li::before {
+  content: '►';
+  margin-right: 0.5rem;
+  color: var(--apphub-accent);
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  color: inherit;
+}
+
+/* Ссылки (подвал и др.) тоже тёмные с оранжевым акцентом */
+a {
+  color: var(--apphub-primary);
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--apphub-accent);
+}
