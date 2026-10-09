@@ -1,3 +1,5 @@
+/* Пиксель‑ретро стиль + анимированный градиент */
+
 /* Общие стили */
 * {
   box-sizing: border-box;
@@ -5,86 +7,63 @@
   padding: 0;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: #f5f7fa;
-  padding: 20px;
+html, body {
+  height: 100%;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  color: #fff;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  image-rendering: pixelated;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
+
+a {text-decoration: none; color: inherit;}
 
 .btn {
   display: inline-block;
-  background: #0066ff;
-  color: #fff;
+  background: #ffcc00;
+  color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
+  font-size: 0.75rem;
   transition: background 0.3s;
+  image-rendering: pixelated;
 }
 
-.btn:hover {
-  background: #004fcc;
-}
+.btn:hover {background: #e6b800;}
 
 /* Hero */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #0066ff, #00b4ff);
-  color: #fff;
+  background: rgba(0,0,0,0.3);
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
+.hero h1 {font-size: 2rem; margin-bottom: 0.5rem;}
+.hero p {font-size: 1rem; margin-bottom: 1rem;}
 
 /* Card */
 .card {
-  background: #fff;
+  background: rgba(0,0,0,0.4);
   border-radius: 1rem;
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.card h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #0066ff;
-}
+.card h2 {font-size: 1.5rem; margin-bottom: 1rem; color: #ffcc00;}
+.card p {margin-bottom: 1rem;}
+.card ul {list-style: none; margin-left: 0;}
+.card li::before {content: '▶'; margin-right: 0.5rem;}
 
-.card p {
-  margin-bottom: 1rem;
-}
-
-.card ul {
-  list-style: none;
-  margin-left: 0;
-}
-
-.card li::before {
-  content: '✔️';
-  margin-right: 0.5rem;
-}
-
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: #777;
-}
+footer {text-align: center; margin-top: 3rem; font-size: 0.7rem; opacity: 0.8;}
