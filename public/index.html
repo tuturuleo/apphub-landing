@@ -1,21 +1,33 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>apphub-landing</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <h1>apphub-landing</h1>
-      <p class="muted" id="status">Подключаюсь к Supabase…</p>
-      <form id="form">
-        <input id="text" placeholder="Новая заметка" autocomplete="off" required maxlength="1000" />
-        <button type="submit">Добавить</button>
-      </form>
-      <ul id="notes"></ul>
-    </main>
-    <script type="module" src="app.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AppHub — современный лендинг</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero">
+    <h1>AppHub</h1>
+    <p class="subtitle">Создавайте, развёртывайте и управляйте прототипами приложений без лишних хлопот.</p>
+    <a href="https://apphub.io" class="cta">Попробовать сейчас</a>
+  </section>
+  <section class="features">
+    <div class="card">
+      <h2>Бесплатные ресурсы</h2>
+      <p>GitHub, Supabase, Cloudflare, Render — всё в одном месте.</p>
+    </div>
+    <div class="card">
+      <h2>Автоматический деплой</h2>
+      <p>GitHub Actions собирает и публикует ваш сайт за минуты.</p>
+    </div>
+    <div class="card">
+      <h2>Простая настройка</h2>
+      <p>Выбирайте рецепты, меняйте код — без серверов.</p>
+    </div>
+  </section>
+  <footer>
+    <p>© 2026 AppHub. Все права защищены.</p>
+  </footer>
+</body>
 </html>
