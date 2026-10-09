@@ -1,56 +1,44 @@
-/* Пиксель‑ретро: тёмный фон, неоновый градиент, шрифт Press Start 2P */
+/* Фирменные цвета AppHub + пиксельный шрифт */
 
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Press Start 2P', monospace;
-  -webkit-font-smoothing: none; /* отключаем сглаживание */
+  -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
-  background: #111;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Плавный неоновый градиентный фон */
-@keyframes neonShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  top: -50%; left: -50%; width: 200%; height: 200%;
-  background: linear-gradient(45deg, #0ff, #f0f, #ff0, #0ff);
-  background-size: 400% 400%;
-  animation: neonShift 12s linear infinite;
-  opacity: 0.15;
-  z-index: -1;
+  background: #ffffff; /* чистый белый фон */
+  color: #111;
 }
 
 a {text-decoration: none; color: inherit;}
 
+/* Основные цвета */
+:root {
+  --apphub-primary: #0066ff;   /* темно‑синий */
+  --apphub-accent:  #00b4ff;   /* светло‑голубой */
+}
+
 .btn {
   display: inline-block;
-  background: #00ffcc;
-  color: #111;
+  background: var(--apphub-primary);
+  color: #fff;
   padding: 0.6rem 1.2rem;
   border-radius: 0.3rem;
   margin-top: 1rem;
   font-size: 0.75rem;
-  text-shadow: 0 0 2px #fff;
+  text-shadow: 0 0 1px #fff;
   transition: background 0.2s;
   image-rendering: pixelated;
 }
 
-.btn:hover {background: #00ddaa;}
+.btn:hover {background: var(--apphub-accent);}
 
 /* Hero */
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background: rgba(0,0,0,0.6);
+  background: var(--apphub-primary);
+  color: #fff;
   border-radius: 0.5rem;
   margin: 2rem auto;
   max-width: 90%;
@@ -61,33 +49,18 @@ a {text-decoration: none; color: inherit;}
 
 /* Card */
 .card {
-  background: rgba(0,0,0,0.5);
-  border: 2px solid #00ffcc;
+  background: #f5f7fa;
+  border: 2px solid var(--apphub-primary);
   border-radius: 0.5rem;
   padding: 1.5rem;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 0 10px #00ffcc;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-.card h2 {font-size: 1.5rem; margin-bottom: 0.8rem; color: #00ffcc;}
+.card h2 {font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--apphub-primary);}
 .card p {margin-bottom: 0.8rem;}
 .card ul {list-style: none; margin-left: 0;}
-.card li::before {content: '►'; margin-right: 0.5rem; color: #ff00ff;}
+.card li::before {content: '►'; margin-right: 0.5rem; color: var(--apphub-accent);}
 
 footer {text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.6;}
-
-/* Пиксельный шум (CSS‑анимация) */
-@keyframes noise {
-  0% {background-position:0 0;}
-  100% {background-position:100% 100%;}
-}
-body::after {
-  content: '';
-  position: absolute;
-  top:0; left:0; width:100%; height:100%;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="1" height="1" fill="%23000"/><rect x="1" y="1" width="1" height="1" fill="%23000"/></svg>') repeat;
-  opacity: 0.03;
-  pointer-events: none;
-  animation: noise 0.5s steps(10) infinite;
-}
